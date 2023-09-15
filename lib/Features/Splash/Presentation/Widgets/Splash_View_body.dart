@@ -1,3 +1,4 @@
+import 'package:bokly/Features/home/Presentatiion/home_veiw.dart';
 import 'package:bokly/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
@@ -16,20 +17,12 @@ class _SplashVeiwBodyState extends State<SplashVeiwBody>
   late Animation<Offset> slidinganimation;
   @override
   void initState() {
-    animationcontroller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2));
-    slidinganimation =
-        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
-            .animate(animationcontroller);
-    animationcontroller.forward();
-    slidinganimation.addListener(() {
-      setState(() {});
-    });
-    super.initState();
-    Future.delayed(const Duration(seconds: 3), (){
-      
-    });
+    initslidinganimation();
+     super.initState();
+    navigateToHomepage();
   }
+
+ 
 
   @override
   void  dispose() {
@@ -65,5 +58,23 @@ class _SplashVeiwBodyState extends State<SplashVeiwBody>
             })
       ],
     );
+  }
+   void navigateToHomepage() {
+   
+    Future.delayed(const Duration(seconds: 3), (){
+      Get.to(()=> const  Homeveiw(), transition: Transition.fade);
+    });
+  }
+
+  void initslidinganimation() {
+    animationcontroller =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+    slidinganimation =
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
+            .animate(animationcontroller);
+    animationcontroller.forward();
+    slidinganimation.addListener(() {
+      setState(() {});
+    });
   }
 }
