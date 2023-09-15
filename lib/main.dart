@@ -1,4 +1,4 @@
-import 'package:bokly/Features/Splash/Presentation/Splash_Veiw.dart';
+import 'package:bokly/Features/Splash/Presentation/splash_Veiw.dart';
 import 'package:bokly/constanats.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
