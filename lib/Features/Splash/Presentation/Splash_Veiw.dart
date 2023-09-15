@@ -6,6 +6,8 @@ class SplashVeiw extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const  SplashVeiwBody();
+    return const  Scaffold(
+      body: SplashVeiwBody(),
+    );
   }
 }

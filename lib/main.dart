@@ -1,4 +1,5 @@
 import 'package:bokly/Features/Splash/Presentation/Splash_Veiw.dart';
+import 'package:bokly/constanats.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -10,8 +11,9 @@ class BooklyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return  GetMaterialApp(
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kprimaryColor),
       debugShowCheckedModeBanner: false,
-      home: SplashVeiw(),
+      home:const  SplashVeiw(),
     );
 }}
