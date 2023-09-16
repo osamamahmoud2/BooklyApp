@@ -24,7 +24,7 @@ class Homeveiwbody extends StatelessWidget {
             padding: EdgeInsets.all(8.0),
             child: Text(
               "Best Saller",
-              style: Styles.titlemediam,
+              style: Styles.textstyle18,
             ),
           ),
           SizedBox(
