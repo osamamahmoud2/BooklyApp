@@ -1,5 +1,5 @@
 import 'package:bokly/Features/home/Presentatiion/home_veiw.dart';
-import 'package:bokly/assets.dart';
+import 'package:bokly/Core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -18,19 +18,18 @@ class _SplashVeiwBodyState extends State<SplashVeiwBody>
   @override
   void initState() {
     initslidinganimation();
-     super.initState();
+    super.initState();
     navigateToHomepage();
   }
 
- 
-
   @override
-  void  dispose() {
+  void dispose() {
     super.dispose();
     animationcontroller.dispose();
   }
+
   @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -59,10 +58,10 @@ class _SplashVeiwBodyState extends State<SplashVeiwBody>
       ],
     );
   }
-   void navigateToHomepage() {
-   
-    Future.delayed(const Duration(seconds: 3), (){
-      Get.to(()=> const  Homeveiw(), transition: Transition.fade);
+
+  void navigateToHomepage() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.to(() => const Homeveiw(), transition: Transition.fade);
     });
   }
 

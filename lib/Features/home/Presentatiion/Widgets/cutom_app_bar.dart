@@ -1,4 +1,4 @@
-import 'package:bokly/assets.dart';
+import 'package:bokly/Core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
