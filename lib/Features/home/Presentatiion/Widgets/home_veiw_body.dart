@@ -1,4 +1,5 @@
 import 'package:bokly/Core/utils/styles.dart';
+import 'package:bokly/Features/home/Presentatiion/Widgets/best_saller_list_veiw_item.dart';
 import 'package:bokly/Features/home/Presentatiion/Widgets/book_list_veiw.dart';
 import 'package:bokly/Features/home/Presentatiion/Widgets/cutom_app_bar.dart';
 
@@ -17,7 +18,7 @@ class Homeveiwbody extends StatelessWidget {
           CustomAppBar(),
           FeaturedBooksListVeiw(),
           SizedBox(
-            height: 30,
+            height: 49,
           ),
           Padding(
             padding: EdgeInsets.all(8.0),
@@ -25,7 +26,11 @@ class Homeveiwbody extends StatelessWidget {
               "Best Saller",
               style: Styles.titlemediam,
             ),
-          )
+          ),
+          SizedBox(
+            height: 14,
+          ),
+          BestSallerListVeiwItem()
         ],
       ),
     );
