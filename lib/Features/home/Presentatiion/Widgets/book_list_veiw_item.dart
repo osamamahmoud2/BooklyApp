@@ -1,4 +1,3 @@
-import 'package:bokly/Core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class Listveiwitem extends StatelessWidget {
@@ -10,11 +9,11 @@ class Listveiwitem extends StatelessWidget {
       aspectRatio: 2.7 / 4,
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(21),
           color: Colors.red,
           image: const DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage(Assetdata.testIamge),
+            image: AssetImage('Assets/Images/book.png'),
           ),
         ),
       ),
