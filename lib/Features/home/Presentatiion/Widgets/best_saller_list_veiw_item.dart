@@ -1,6 +1,6 @@
 import 'package:bokly/Core/utils/styles.dart';
 import 'package:bokly/Features/home/Presentatiion/Widgets/Book_rating.dart';
-import 'package:bokly/constanats.dart';
+import 'package:bokly/Core/utils/constanats.dart';
 import 'package:flutter/material.dart';
 
 class BestSallerListVeiwItem extends StatelessWidget {
