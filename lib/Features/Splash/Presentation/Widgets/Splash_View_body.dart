@@ -1,8 +1,8 @@
+import 'package:bokly/Core/utils/App_router.dart';
 import 'package:bokly/Features/home/Presentatiion/home_veiw.dart';
 import 'package:bokly/Core/utils/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/get_core.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashVeiwBody extends StatefulWidget {
   const SplashVeiwBody({super.key});
@@ -61,7 +61,9 @@ class _SplashVeiwBodyState extends State<SplashVeiwBody>
 
   void navigateToHomepage() {
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(() => const Homeveiw(), transition: Transition.fade);
+      // context.go('/HomeView');
+      GoRouter.of(context).push(AppRouter.kHomeView);
+      // Get.to(() => const Homeveiw(), transition: Transition.fade);
     });
   }
 
