@@ -1,4 +1,4 @@
-import 'package:bokly/Core/Custom_bottom.dart';
+import 'package:bokly/Core/utils/Custom_bottom.dart';
 import 'package:bokly/Core/utils/styles.dart';
 import 'package:bokly/Features/home/Presentatiion/Widgets/Book_rating.dart';
 import 'package:bokly/Features/home/Presentatiion/Widgets/book_list_veiw.dart';
@@ -95,7 +95,7 @@ class BookDetialsVeiwBody extends StatelessWidget {
               height: 16,
             ),
             SizedBox(
-                height: MediaQuery.of(context).size.height * 0.15,
+                height: MediaQuery.of(context).size.height * 0.11,
                 child: const FeaturedBooksListVeiw())
           ],
         ),
