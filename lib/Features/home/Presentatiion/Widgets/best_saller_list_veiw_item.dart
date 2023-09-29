@@ -17,7 +17,7 @@ class BestSallerListVeiwItem extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.red,
+                color: Colors.transparent,
                 image: const DecorationImage(
                   fit: BoxFit.fill,
                   image: AssetImage('Assets/Images/book.png'),
