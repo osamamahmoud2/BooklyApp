@@ -6,7 +6,16 @@ class Listveiwitem extends StatelessWidget {
   final String url;
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-        aspectRatio: 2.7 / 4, child: CachedNetworkImage(imageUrl: url));
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: AspectRatio(
+          aspectRatio: 2.7 / 4,
+          child: CachedNetworkImage(
+              errorWidget: (context, url, error) {
+                return const Icon(Icons.error);
+              },
+              fit: BoxFit.fill,
+              imageUrl: url)),
+    );
   }
 }
