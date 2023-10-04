@@ -14,6 +14,7 @@ class Homeveiwbody extends StatelessWidget {
     return GestureDetector(
       onTap: () => GoRouter.of(context).push(AppRouter.kBookDetialsView),
       child: const CustomScrollView(
+        physics: BouncingScrollPhysics(),
         slivers: [
           SliverToBoxAdapter(
             child: Padding(

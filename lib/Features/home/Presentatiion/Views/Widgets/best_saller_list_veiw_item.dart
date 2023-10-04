@@ -1,12 +1,14 @@
 import 'package:bokly/Core/utils/styles.dart';
 
 import 'package:bokly/Core/utils/constanats.dart';
+import 'package:bokly/Features/home/Data/Models/book_model/book_model.dart';
 import 'package:bokly/Features/home/Presentatiion/Views/Widgets/Book_rating.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BestSallerListVeiwItem extends StatelessWidget {
-  const BestSallerListVeiwItem({super.key});
-
+  const BestSallerListVeiwItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -19,9 +21,10 @@ class BestSallerListVeiwItem extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.transparent,
-                image: const DecorationImage(
+                image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: AssetImage('Assets/Images/book.png'),
+                  image: CachedNetworkImageProvider(
+                      bookModel.volumeInfo!.imageLinks!.thumbnail),
                 ),
               ),
             ),
@@ -36,7 +39,7 @@ class BestSallerListVeiwItem extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .5,
                   child: Text(
-                    'Harry Potter and the Goblet of Fire',
+                    bookModel.volumeInfo!.title!,
                     style:
                         Styles.textstyle18.copyWith(fontFamily: ksecoundfont),
                     maxLines: 2,
@@ -46,8 +49,8 @@ class BestSallerListVeiwItem extends StatelessWidget {
                 const SizedBox(
                   height: 3,
                 ),
-                const Text(
-                  'J.K. Rowling',
+                Text(
+                  bookModel.volumeInfo!.authors![0],
                   style: Styles.textstyle14,
                 ),
                 const SizedBox(
@@ -56,12 +59,15 @@ class BestSallerListVeiwItem extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      '19.99 €',
+                      'Free',
                       style: Styles.textstyle20
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
                     const Spacer(),
-                    const BookRateing()
+                    BookRateing(
+                      bookRateing: bookModel.volumeInfo!.averageRating ?? 0,
+                      rateingcount: bookModel.volumeInfo!.ratingsCount ?? 0,
+                    )
                   ],
                 )
               ],

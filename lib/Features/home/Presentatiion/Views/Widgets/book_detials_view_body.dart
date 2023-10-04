@@ -48,7 +48,10 @@ class BookDetialsVeiwBody extends StatelessWidget {
             const SizedBox(
               height: 14,
             ),
-            const BookRateing(),
+            BookRateing(
+              bookRateing: 5,
+              rateingcount: 296,
+            ),
             const SizedBox(
               height: 37,
             ),
