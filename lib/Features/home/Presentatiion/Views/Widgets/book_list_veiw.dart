@@ -16,9 +16,12 @@ class FeaturedBooksListVeiw extends StatelessWidget {
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.only(left: 9, right: 9),
-                  child: Listveiwitem(),
+                return Padding(
+                  padding: const EdgeInsets.only(left: 9, right: 9),
+                  child: Listveiwitem(
+                    imageurl:
+                        state.books[index].volumeInfo.imageLinks.thumbnail,
+                  ),
                 );
               }),
         );

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Listveiwitem extends StatelessWidget {
-  const Listveiwitem({super.key});
-
+  const Listveiwitem({super.key, required this.imageurl});
+  final String imageurl;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(

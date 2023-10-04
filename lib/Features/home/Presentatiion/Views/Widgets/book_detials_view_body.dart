@@ -25,7 +25,10 @@ class BookDetialsVeiwBody extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * 0.25,
               ),
-              child: const Listveiwitem(),
+              child: const Listveiwitem(
+                imageurl:
+                    'https://www.bing.com/images/search?view=detailV2&ccid=n1LA6Kpo&id=2B7EB3A11CDC215BEBFE3525A2E3FC983A1AAFAF&thid=OIP.n1LA6KpoOdVjhU5f4VBthgHaIp&mediaurl=https%3A%2F%2Fsd.keepcalm-o-matic.co.uk%2Fi%2Fkeep-calm-and-read-books-1551.png&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.9f52c0e8aa6839d563854e5fe1506d86%3Frik%3Dr68aOpj846IlNQ%26pid%3DImgRaw%26r%3D0&exph=700&expw=600&q=Good+Books+to+Read&simid=608001287603037815&form=IRPRST&ck=38DF544E6CB128DCCE1D8F84CF0D92A6&selectedindex=32&ajaxhist=0&ajaxserp=0&pivotparams=insightsToken%3Dccid_lk6sjMmH*cp_2238772E475C0BCA4956C92A42109333*mid_AD56AB5D877E38394A6D3D95BC46693571668DD6*simid_608042583703383080*thid_OIP.lk6sjMmHuUG4!_nFMBfiWRgHaIP&vt=0&sim=11&iss=VSI',
+              ),
             ),
             const SizedBox(
               height: 40,
