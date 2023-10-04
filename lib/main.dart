@@ -1,8 +1,7 @@
 import 'package:bokly/Core/utils/App_router.dart';
-import 'package:bokly/Features/Splash/Presentation/splash_Veiw.dart';
+
 import 'package:bokly/Core/utils/constanats.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 

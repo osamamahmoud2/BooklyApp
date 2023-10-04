@@ -1,8 +1,8 @@
 import 'package:bokly/Core/utils/App_router.dart';
 import 'package:bokly/Core/utils/styles.dart';
-import 'package:bokly/Features/home/Presentatiion/Widgets/best_saller_list_veiw.dart';
-import 'package:bokly/Features/home/Presentatiion/Widgets/book_list_veiw.dart';
-import 'package:bokly/Features/home/Presentatiion/Widgets/cutom_app_bar.dart';
+import 'package:bokly/Features/home/Presentatiion/Views/Widgets/best_saller_list_veiw.dart';
+import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_list_veiw.dart';
+import 'package:bokly/Features/home/Presentatiion/Views/Widgets/cutom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

@@ -1,4 +1,4 @@
-import 'package:bokly/Features/home/Presentatiion/Widgets/book_detials_view_body.dart';
+import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_detials_view_body.dart';
 import 'package:flutter/material.dart';
 
 class BookDetialsVeiw extends StatelessWidget {

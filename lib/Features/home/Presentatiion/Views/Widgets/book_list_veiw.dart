@@ -1,4 +1,4 @@
-import 'package:bokly/Features/home/Presentatiion/Widgets/book_list_veiw_item.dart';
+import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_list_veiw_item.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedBooksListVeiw extends StatelessWidget {

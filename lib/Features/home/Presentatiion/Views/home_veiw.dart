@@ -1,4 +1,5 @@
-import 'package:bokly/Features/home/Presentatiion/Widgets/home_veiw_body.dart';
+import 'package:bokly/Features/home/Presentatiion/Views/Widgets/home_veiw_body.dart';
+
 import 'package:flutter/material.dart';
 
 class Homeveiw extends StatelessWidget {

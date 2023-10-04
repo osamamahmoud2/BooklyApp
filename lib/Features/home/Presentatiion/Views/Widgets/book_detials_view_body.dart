@@ -1,9 +1,9 @@
 import 'package:bokly/Core/utils/Custom_bottom.dart';
 import 'package:bokly/Core/utils/styles.dart';
-import 'package:bokly/Features/home/Presentatiion/Widgets/Book_rating.dart';
-import 'package:bokly/Features/home/Presentatiion/Widgets/book_list_veiw.dart';
-import 'package:bokly/Features/home/Presentatiion/Widgets/book_list_veiw_item.dart';
-import 'package:bokly/Features/home/Presentatiion/Widgets/custom_book_details_App_bar.dart';
+import 'package:bokly/Features/home/Presentatiion/Views/Widgets/Book_rating.dart';
+import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_list_veiw.dart';
+import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_list_veiw_item.dart';
+import 'package:bokly/Features/home/Presentatiion/Views/Widgets/custom_book_details_App_bar.dart';
 import 'package:bokly/Core/utils/constanats.dart';
 import 'package:flutter/material.dart';
 
