@@ -30,7 +30,7 @@ class Homeveiwbody extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      "Best Saller",
+                      "Newest",
                       style: Styles.textstyle18,
                     ),
                   ),

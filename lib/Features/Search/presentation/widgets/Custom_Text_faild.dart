@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CutomSearchItem extends StatelessWidget {
+class CutomSearchItem extends StatefulWidget {
   const CutomSearchItem({super.key});
 
+  @override
+  State<CutomSearchItem> createState() => _CutomSearchItemState();
+}
+
+class _CutomSearchItemState extends State<CutomSearchItem> {
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -16,3 +21,5 @@ class CutomSearchItem extends StatelessWidget {
     );
   }
 }
+
+String? searchSubject;

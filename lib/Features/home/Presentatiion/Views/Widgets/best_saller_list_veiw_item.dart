@@ -23,8 +23,9 @@ class BestSallerListVeiwItem extends StatelessWidget {
                 color: Colors.transparent,
                 image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: CachedNetworkImageProvider(
-                      bookModel.volumeInfo!.imageLinks!.thumbnail),
+                  image: CachedNetworkImageProvider(bookModel
+                          .volumeInfo!.imageLinks?.thumbnail ??
+                      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Ferror-flat-red-color-icon-vector-6076345&psig=AOvVaw1anDbNWblVn5XJVx949pR6&ust=1696579509388000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKDjzO-r3oEDFQAAAAAdAAAAABAJ'),
                 ),
               ),
             ),
@@ -63,10 +64,10 @@ class BestSallerListVeiwItem extends StatelessWidget {
                       style: Styles.textstyle20
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
-                    const Spacer(),
+                    Spacer(),
                     BookRateing(
                       bookRateing: bookModel.volumeInfo!.averageRating ?? 0,
-                      rateingcount: bookModel.volumeInfo!.ratingsCount ?? 0,
+                      rateingcount: bookModel.volumeInfo?.ratingsCount ?? 0,
                     )
                   ],
                 )

@@ -11,10 +11,12 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failures, List<BookModel>>> fetchBestSallerBooks() async {
     try {
-      var data = await apiService.get(endpoint: 'volumes?q=Api');
+      var data = await apiService.get(endpoint: 'volumes?q=Films');
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
+        try {
+          books.add(BookModel.fromJson(item));
+        } catch (e) {}
       }
       return right(books);
     } catch (e) {
@@ -28,10 +30,12 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      var data = await apiService.get(endpoint: 'volumes?q=programming');
+      var data = await apiService.get(endpoint: 'volumes?q=Life Style');
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
+        try {
+          books.add(BookModel.fromJson(item));
+        } catch (e) {}
       }
       return right(books);
     } catch (e) {

@@ -21,7 +21,8 @@ class FeaturedBooksListVeiw extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.only(left: 9, right: 9),
                   child: Listveiwitem(
-                    url: state.books[index].volumeInfo!.imageLinks!.thumbnail,
+                    url: state.books[index].volumeInfo!.imageLinks?.thumbnail ??
+                        'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Ferror-flat-red-color-icon-vector-6076345&psig=AOvVaw1anDbNWblVn5XJVx949pR6&ust=1696579509388000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKDjzO-r3oEDFQAAAAAdAAAAABAJ',
                   ),
                 );
               }),
