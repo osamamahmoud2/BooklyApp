@@ -1,8 +1,8 @@
 import 'package:bokly/Core/utils/Api_Service.dart';
 import 'package:bokly/Core/utils/App_router.dart';
-import 'package:bokly/Core/utils/Service_locator.dart';
 
 import 'package:bokly/Core/utils/constanats.dart';
+import 'package:bokly/Core/utils/service_locator.dart';
 import 'package:bokly/Features/home/Data/Repos/Home_Repo_impl.dart';
 import 'package:bokly/Features/home/Presentatiion/Manger/BestSaller_Book_Cubit/best_saller_books_cubit.dart';
 import 'package:bokly/Features/home/Presentatiion/Manger/Featured_Books_Cubit/featured_books_cubit.dart';
@@ -24,14 +24,14 @@ class BooklyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => FeaturedBooksCubit(
-            getIt.get<HomeRepoImpl>(),
-          )..featchFeatuedBooks(),
+          create: (context) =>
+              FeaturedBooksCubit(HomeRepoImpl(ApiService(Dio())))
+                ..featchFeatuedBooks(),
         ),
         BlocProvider(
-          create: (context) => BestSallerBooksCubit(
-            getIt.get<HomeRepoImpl>(),
-          )..featchBestSallerBooks(),
+          create: (context) =>
+              BestSallerBooksCubit(HomeRepoImpl(ApiService(Dio())))
+                ..featchBestSallerBooks(),
         )
       ],
       child: MaterialApp.router(

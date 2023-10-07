@@ -4,7 +4,7 @@ import 'package:bokly/Features/Splash/Presentation/splash_Veiw.dart';
 import 'package:bokly/Features/home/Data/Models/book_model/book_model.dart';
 import 'package:bokly/Features/home/Data/Repos/Home_Repo_impl.dart';
 import 'package:bokly/Features/home/Presentatiion/Manger/Featured_Books_Cubit/featured_books_cubit.dart';
-import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_detials_veiw.dart';
+import 'package:bokly/Features/home/Presentatiion/Views/book_detials_veiw.dart';
 import 'package:bokly/Features/home/Presentatiion/Views/home_veiw.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,15 +28,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kBookDetialsView,
-        builder: (context, state) => BlocProvider(
-            create: (context) => FeaturedBooksCubit(
-                  HomeRepoImpl(
-                    ApiService(
-                      Dio(),
-                    ),
-                  ),
-                )..featchFeatuedBooks(),
-            child: const BookDetialsVeiw(bookModel: BookModel())),
+        builder: (context, state) => BookDetialsVeiw(),
       ),
       GoRoute(
         path: KSearchView,

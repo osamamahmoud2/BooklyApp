@@ -6,12 +6,14 @@ import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_list_veiw.d
 import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_list_veiw_item.dart';
 import 'package:bokly/Features/home/Presentatiion/Views/Widgets/custom_book_details_App_bar.dart';
 import 'package:bokly/Core/utils/constanats.dart';
+import 'package:bokly/Features/home/Presentatiion/Views/Widgets/similarBooksListView.dart';
 import 'package:flutter/material.dart';
 
 class BookDetialsVeiwBody extends StatelessWidget {
-  const BookDetialsVeiwBody({super.key, required this.bookModel});
+  const BookDetialsVeiwBody({
+    super.key,
+  });
 
-  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -29,7 +31,7 @@ class BookDetialsVeiwBody extends StatelessWidget {
               ),
               child: const Listveiwitem(
                 url:
-                    'https://www.shereadsromancebooks.com/wp-content/uploads/2022/10/reading-journals-list-576x1024.jpg',
+                    'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ethosbooks.com.sg%2Fproducts%2Fthe-singapore-i-recognise-essays-on-home-community-and-hope&psig=AOvVaw1TJkVdt4RrafzadAn4r5gb&ust=1696804731549000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNj0kvLy5IEDFQAAAAAdAAAAABAL',
               ),
             ),
             const SizedBox(
@@ -104,7 +106,7 @@ class BookDetialsVeiwBody extends StatelessWidget {
             ),
             SizedBox(
                 height: MediaQuery.of(context).size.height * 0.11,
-                child: const FeaturedBooksListVeiw())
+                child: const SimilarBooksListView())
           ],
         ),
       ),
