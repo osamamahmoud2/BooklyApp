@@ -2,7 +2,6 @@ import 'package:bokly/Core/utils/Custom_bottom.dart';
 import 'package:bokly/Core/utils/styles.dart';
 import 'package:bokly/Features/home/Data/Models/book_model/book_model.dart';
 import 'package:bokly/Features/home/Presentatiion/Views/Widgets/Book_rating.dart';
-import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_list_veiw.dart';
 import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_list_veiw_item.dart';
 import 'package:bokly/Features/home/Presentatiion/Views/Widgets/custom_book_details_App_bar.dart';
 import 'package:bokly/Core/utils/constanats.dart';
@@ -10,10 +9,9 @@ import 'package:bokly/Features/home/Presentatiion/Views/Widgets/similarBooksList
 import 'package:flutter/material.dart';
 
 class BookDetialsVeiwBody extends StatelessWidget {
-  const BookDetialsVeiwBody({
-    super.key,
-  });
+  const BookDetialsVeiwBody({super.key, required this.bookModel});
 
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -29,32 +27,33 @@ class BookDetialsVeiwBody extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * 0.25,
               ),
-              child: const Listveiwitem(
-                url:
-                    'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ethosbooks.com.sg%2Fproducts%2Fthe-singapore-i-recognise-essays-on-home-community-and-hope&psig=AOvVaw1TJkVdt4RrafzadAn4r5gb&ust=1696804731549000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNj0kvLy5IEDFQAAAAAdAAAAABAL',
+              child: Listveiwitem(
+                url: bookModel.volumeInfo.imageLinks?.thumbnail ?? ' ',
               ),
             ),
             const SizedBox(
               height: 40,
             ),
             Text(
-              'The Jungle Book',
-              style: Styles.textstyle30.copyWith(fontFamily: ksecoundfont),
+              bookModel.volumeInfo.title!,
+              style: Styles.textstyle20.copyWith(fontFamily: ksecoundfont),
+              textAlign: TextAlign.center,
+              maxLines: 2,
             ),
             const SizedBox(
               height: 6,
             ),
             Text(
-              'Rudyard Kipling',
+              bookModel.volumeInfo.authors![0],
               style:
                   Styles.textstyle18.copyWith(color: const Color(0xff707070)),
             ),
             const SizedBox(
               height: 14,
             ),
-            const BookRateing(
-              bookRateing: 5,
-              rateingcount: 296,
+            BookRateing(
+              bookRateing: bookModel.volumeInfo.averageRating ?? 0,
+              rateingcount: bookModel.volumeInfo.ratingsCount ?? 0,
             ),
             const SizedBox(
               height: 37,
@@ -65,7 +64,7 @@ class BookDetialsVeiwBody extends StatelessWidget {
                 children: [
                   Expanded(
                     child: CustomBottom(
-                      text: '19.99€',
+                      text: 'Free',
                       backgroundColor: Colors.white,
                       textcolor: Colors.black,
                       borderRadius: BorderRadius.only(
@@ -106,7 +105,9 @@ class BookDetialsVeiwBody extends StatelessWidget {
             ),
             SizedBox(
                 height: MediaQuery.of(context).size.height * 0.11,
-                child: const SimilarBooksListView())
+                child: SimilarBooksListView(
+                  bookModel: bookModel,
+                ))
           ],
         ),
       ),

@@ -3,7 +3,8 @@ import 'package:bokly/Features/Search/presentation/Search_view.dart';
 import 'package:bokly/Features/Splash/Presentation/splash_Veiw.dart';
 import 'package:bokly/Features/home/Data/Models/book_model/book_model.dart';
 import 'package:bokly/Features/home/Data/Repos/Home_Repo_impl.dart';
-import 'package:bokly/Features/home/Presentatiion/Manger/Featured_Books_Cubit/featured_books_cubit.dart';
+
+import 'package:bokly/Features/home/Presentatiion/Manger/cubit/simliare_books_cubit.dart';
 import 'package:bokly/Features/home/Presentatiion/Views/book_detials_veiw.dart';
 import 'package:bokly/Features/home/Presentatiion/Views/home_veiw.dart';
 import 'package:dio/dio.dart';
@@ -28,7 +29,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kBookDetialsView,
-        builder: (context, state) => BookDetialsVeiw(),
+        builder: (context, state) => BlocProvider(
+            create: (context) =>
+                SimliareBooksCubit(HomeRepoImpl(ApiService(Dio()))),
+            child: BookDetialsVeiw(bookModel: state.extra as BookModel)),
       ),
       GoRoute(
         path: KSearchView,

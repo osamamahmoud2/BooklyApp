@@ -68,8 +68,11 @@ class VolumeInfo extends Equatable {
         pageCount: json['pageCount'] as int?,
         printType: json['printType'] as String?,
         categories: (json['categories'] as List<dynamic>?)!.cast<String>(),
-        averageRating: json['averageRating'] as int?,
-        ratingsCount: json['ratingsCount'] as int?,
+        averageRating: json['averageRating'] == Null
+            ? null
+            : json['averageRating'] as int?,
+        ratingsCount:
+            json['ratingsCount'] == null ? null : json['ratingsCount'] as num?,
         maturityRating: json['maturityRating'] as String?,
         allowAnonLogging: json['allowAnonLogging'] as bool?,
         contentVersion: json['contentVersion'] as String?,
