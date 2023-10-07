@@ -1,5 +1,6 @@
 import 'package:bokly/Core/utils/Api_Service.dart';
 import 'package:bokly/Core/utils/App_router.dart';
+import 'package:bokly/Core/utils/Service_locator.dart';
 
 import 'package:bokly/Core/utils/constanats.dart';
 import 'package:bokly/Features/home/Data/Repos/Home_Repo_impl.dart';
@@ -24,20 +25,12 @@ class BooklyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => FeaturedBooksCubit(
-            HomeRepoImpl(
-              ApiService(
-                Dio(),
-              ),
-            ),
+            getIt.get<HomeRepoImpl>(),
           )..featchFeatuedBooks(),
         ),
         BlocProvider(
           create: (context) => BestSallerBooksCubit(
-            HomeRepoImpl(
-              ApiService(
-                Dio(),
-              ),
-            ),
+            getIt.get<HomeRepoImpl>(),
           )..featchBestSallerBooks(),
         )
       ],
