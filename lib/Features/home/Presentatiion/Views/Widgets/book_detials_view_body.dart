@@ -27,8 +27,9 @@ class BookDetialsVeiwBody extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * 0.25,
               ),
-              child: Listveiwitem(
-                url: bookModel.volumeInfo!.imageLinks?.thumbnail ?? '',
+              child: const Listveiwitem(
+                url:
+                    'https://www.shereadsromancebooks.com/wp-content/uploads/2022/10/reading-journals-list-576x1024.jpg',
               ),
             ),
             const SizedBox(
