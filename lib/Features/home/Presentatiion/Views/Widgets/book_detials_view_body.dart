@@ -78,12 +78,10 @@ class BookDetialsVeiwBody extends StatelessWidget {
                     child: CustomBottom(
                       onPressed: () async {
                         Uri uri = Uri.parse(bookModel.volumeInfo.previewLink!);
-                        if (!await canLaunchUrl(uri)) {
-                          launchUrl(uri);
-                        }
+                        if (!await launchUrl(uri)) {}
                       },
                       text: 'Free preview',
-                      backgroundColor: Color(0xffEF8262),
+                      backgroundColor: const Color(0xffEF8262),
                       textcolor: Colors.white,
                       borderRadius: const BorderRadius.only(
                           topRight: Radius.circular(16),

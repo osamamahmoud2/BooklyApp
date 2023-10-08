@@ -1,4 +1,3 @@
-import 'package:bokly/Features/home/Presentatiion/Views/Widgets/best_saller_list_veiw_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchListView extends StatelessWidget {

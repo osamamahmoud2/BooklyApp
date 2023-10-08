@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:bokly/Features/home/Data/Models/book_model/book_model.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 
 import '../../../Data/Repos/home_repo.dart';
 

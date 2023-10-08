@@ -1,7 +1,5 @@
-import 'package:bokly/Core/utils/App_router.dart';
 import 'package:bokly/Core/utils/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});

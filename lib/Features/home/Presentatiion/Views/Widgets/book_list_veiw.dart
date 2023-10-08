@@ -1,7 +1,5 @@
 import 'package:bokly/Core/utils/App_router.dart';
-import 'package:bokly/Features/home/Data/Models/book_model/book_model.dart';
 import 'package:bokly/Features/home/Presentatiion/Manger/Featured_Books_Cubit/featured_books_cubit.dart';
-import 'package:bokly/Features/home/Presentatiion/Views/Widgets/Book_rating.dart';
 import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_list_veiw_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

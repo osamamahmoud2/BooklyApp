@@ -12,9 +12,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
-  static final kHomeView = '/HomeView';
-  static final kBookDetialsView = '/BookDetils';
-  static final KSearchView = '/SearchView';
+  static const kHomeView = '/HomeView';
+  static const kBookDetialsView = '/BookDetils';
+  static const KSearchView = '/SearchView';
   BookModel? bookModel;
   static final router = GoRouter(
     routes: [

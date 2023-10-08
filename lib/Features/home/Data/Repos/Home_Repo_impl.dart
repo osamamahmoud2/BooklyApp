@@ -10,9 +10,10 @@ class HomeRepoImpl implements HomeRepo {
 
   HomeRepoImpl(this.apiService);
   @override
+  //Featch Best Saller Books
   Future<Either<Failures, List<BookModel>>> fetchBestSallerBooks() async {
     try {
-      var data = await apiService.get(endpoint: 'volumes?q=intitle:Networking');
+      var data = await apiService.get(endpoint: 'volumes?q=Life Style');
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
@@ -26,16 +27,18 @@ class HomeRepoImpl implements HomeRepo {
     }
   }
 
+  //Featch Featured Books
   @override
   Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      var data =
-          await apiService.get(endpoint: 'volumes?q=intitle:Programming');
+      var data = await apiService.get(endpoint: 'volumes?q=intitle:Horror');
       List<BookModel> books = [];
       for (var item in data['items']) {
         try {
           books.add(BookModel.fromJson(item));
-        } catch (e) {}
+        } catch (e) {
+          print('there was an error');
+        }
       }
       return right(books);
     } catch (e) {
@@ -46,6 +49,7 @@ class HomeRepoImpl implements HomeRepo {
     }
   }
 
+  //Featch Similar Books
   @override
   Future<Either<Failures, List<BookModel>>> featchSimlirBooks(
       {required String category}) async {

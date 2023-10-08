@@ -4,7 +4,6 @@ import 'package:dartz/dartz.dart';
 
 abstract class HomeRepo {
   Future<Either<Failures, List<BookModel>>> fetchBestSallerBooks();
-  //left side is the error side and the right side is the success side
   Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks();
   Future<Either<Failures, List<BookModel>>> featchSimlirBooks(
       {required String category});
