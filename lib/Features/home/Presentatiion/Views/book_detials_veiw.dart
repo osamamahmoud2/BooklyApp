@@ -1,6 +1,5 @@
 import 'package:bokly/Features/home/Data/Models/book_model/book_model.dart';
-
-import 'package:bokly/Features/home/Presentatiion/Manger/cubit/simliare_books_cubit.dart';
+import 'package:bokly/Features/home/Presentatiion/Manger/Similar_Books_Cubit/simliare_books_cubit.dart';
 import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_detials_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

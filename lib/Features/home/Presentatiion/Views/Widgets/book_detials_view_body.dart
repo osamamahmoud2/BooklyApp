@@ -7,6 +7,7 @@ import 'package:bokly/Features/home/Presentatiion/Views/Widgets/custom_book_deta
 import 'package:bokly/Core/utils/constanats.dart';
 import 'package:bokly/Features/home/Presentatiion/Views/Widgets/similarBooksListView.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BookDetialsVeiwBody extends StatelessWidget {
   const BookDetialsVeiwBody({super.key, required this.bookModel});
@@ -38,7 +39,8 @@ class BookDetialsVeiwBody extends StatelessWidget {
               bookModel.volumeInfo.title!,
               style: Styles.textstyle20.copyWith(fontFamily: ksecoundfont),
               textAlign: TextAlign.center,
-              maxLines: 2,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(
               height: 6,
@@ -55,14 +57,14 @@ class BookDetialsVeiwBody extends StatelessWidget {
               bookRateing: bookModel.volumeInfo.averageRating ?? 0,
               rateingcount: bookModel.volumeInfo.ratingsCount ?? 0,
             ),
-            const SizedBox(
-              height: 37,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
                 children: [
-                  Expanded(
+                  const Expanded(
                     child: CustomBottom(
                       text: 'Free',
                       backgroundColor: Colors.white,
@@ -74,10 +76,16 @@ class BookDetialsVeiwBody extends StatelessWidget {
                   ),
                   Expanded(
                     child: CustomBottom(
+                      onPressed: () async {
+                        Uri uri = Uri.parse(bookModel.volumeInfo.previewLink!);
+                        if (!await canLaunchUrl(uri)) {
+                          launchUrl(uri);
+                        }
+                      },
                       text: 'Free preview',
                       backgroundColor: Color(0xffEF8262),
                       textcolor: Colors.white,
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                           topRight: Radius.circular(16),
                           bottomRight: Radius.circular(16)),
                     ),
@@ -85,8 +93,8 @@ class BookDetialsVeiwBody extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 49,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 8),
@@ -104,7 +112,7 @@ class BookDetialsVeiwBody extends StatelessWidget {
               height: 16,
             ),
             SizedBox(
-                height: MediaQuery.of(context).size.height * 0.11,
+                height: MediaQuery.of(context).size.height * 0.18,
                 child: SimilarBooksListView(
                   bookModel: bookModel,
                 ))

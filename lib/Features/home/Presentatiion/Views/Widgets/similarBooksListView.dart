@@ -1,6 +1,5 @@
 import 'package:bokly/Features/home/Data/Models/book_model/book_model.dart';
-
-import 'package:bokly/Features/home/Presentatiion/Manger/cubit/simliare_books_cubit.dart';
+import 'package:bokly/Features/home/Presentatiion/Manger/Similar_Books_Cubit/simliare_books_cubit.dart';
 import 'package:bokly/Features/home/Presentatiion/Views/Widgets/book_list_veiw_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +13,7 @@ class SimilarBooksListView extends StatelessWidget {
       builder: (context, state) {
         if (state is SimliareBooksSuccess) {
           return SizedBox(
-            height: MediaQuery.of(context).size.height * 0.31,
+            height: MediaQuery.of(context).size.height * 0.8,
             child: ListView.builder(
                 itemCount: state.books.length,
                 physics: const BouncingScrollPhysics(),
